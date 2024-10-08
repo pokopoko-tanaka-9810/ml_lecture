@@ -1,8 +1,7 @@
 import os
-
-import tensorflow as tf
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 
+import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
 from config import config
@@ -35,7 +34,7 @@ def build_model(class_num, in_size_x, in_size_y, in_dim):
     input_w = tf.keras.layers.Input(shape=input_shape)
 
     model = tf.keras.models.Sequential()
-    model.add(tf.keras.layers.Conv2D(4, (3, 3), kernel_initializer='he_uniform', padding='same', input_shape = input_w))
+    model.add(tf.keras.layers.Conv2D(4, (3, 3), kernel_initializer='he_uniform', padding='same'))
     model.add(tf.keras.layers.BatchNormalization()) # バッチ正規化 : 過学習を抑えるための手法
     model.add(tf.keras.layers.Activation('selu'))
     model.add(tf.keras.layers.AveragePooling2D((2, 2), strides=2))
