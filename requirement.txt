@@ -1,0 +1,8 @@
+tensorflow-cpu == 2.10
+keras == 2.10
+tensorflow-direct-plugin
+tensorflow_datasets
+urllib3 == 1.26.6
+scikit-learn
+matplotlib
+opencv-python
